@@ -226,7 +226,9 @@ IronLambda.prototype._ensureFileExists = function (name) {
 var lambda = new IronLambda();
 
 program
-  .version(lambda.version)
+  .version(lambda.version);
+
+program
   .command('setup')
   .description('')
   .action(function (prg) {
@@ -234,7 +236,6 @@ program
   });
 
 program
-  .version(lambda.version)
   .command('run')
   .description('runs lambda inside default docker image')
   .action(function (prg) {
@@ -242,7 +243,6 @@ program
   });
 
 program
-  .version(lambda.version)
   .command('run-in-docker')
   .description('builds docker image and runs it locally')
   .action(function (prg) {
@@ -250,7 +250,6 @@ program
   });
 
 program
-  .version(lambda.version)
   .command('exec')
   .description('runs lambda as raw node.js function')
   .action(function (prg) {
@@ -258,7 +257,6 @@ program
   });
 
 program
-  .version(lambda.version)
   .command('deploy')
   .description('')
   .action(function (prg) {
