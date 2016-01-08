@@ -1,0 +1,12 @@
+{
+  "name": "lambda",
+  "version": "0.0.0",
+  "dependencies" : {
+    "iron-lambda" : "*"
+  },
+  "files" : [
+    "package.json",
+    "lambda.js",
+    "Dockerfile"
+  ]
+}

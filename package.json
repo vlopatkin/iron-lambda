@@ -1,0 +1,26 @@
+{
+  "name": "iron-lambda",
+  "version": "1.0.4",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitaly Lopatkin <vitaly.lopatkin@gmail.com>",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "commander": "2.9.0",
+    "dotenv": "0.4.0",
+    "node-lambda": "0.7.1"
+  },
+  "files": [
+    "templates",
+    "app.js",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "bin": {
+    "iron-lambda": "./app.js"
+  }
+}
