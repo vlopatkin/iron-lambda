@@ -1,9 +1,9 @@
 # iron-lambda
-Lambda function support for IronWorker cloud
+Lambda functions support for IronWorker cloud
 
 ## What is this?
 
-Use the iron-lambda to locally dev and test your lambda function in the exact same environment it will
+Use the iron-lambda to locally dev and test your lambda functions in the exact same environment it will
 have when running remotely on the IronWorker cloud.
 
 ## The Workflow
