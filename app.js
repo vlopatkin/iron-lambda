@@ -43,6 +43,7 @@ IronLambda.prototype.exec = function(){
     var cmd = commands[i];
     if (this._isFileExists(cmd)){
       this._runChild('node', [cmd, 'run']);
+      return;
     }
   }
 }
