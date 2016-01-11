@@ -11,7 +11,7 @@ have when running remotely on the IronWorker cloud.
 The general workflow is the following:
 
 1. Create your lambda function (or use existing one). All dependencies must in the current directory or in sub-directories.
-2. Create an input/payload example file (check this into source control as an example, default name is ./event.json)
+2. Create an input/payload example file (check this into source control as an example, default name is _./event.json_)
 3. Run your lambda function locally inside an Iron.io Stack container.
 4. Debug/test until you get it working properly.
 4. Once it works like you want it to, upload it to IronWorker. You should only have to do this once until you want to make changes.
@@ -83,7 +83,7 @@ Template contains the following files:
 iron-lambda run
 ```
 Runs the lambda function inside default iron/node docker container.
-The payload file should be places to _event.json_ or you could specify it's location by PAYLOAD_FILE envoriment variable (do not use .env file for this purpose, otherwise payload will not load in IronWorker cloud)
+The event data to run lambda on (the payload) should be placed to _./event.json_.
 
 ### run-in-docker
 **Run locally inside docker container**
@@ -91,7 +91,8 @@ The payload file should be places to _event.json_ or you could specify it's loca
 iron-lambda run-in-docker
 ```
 Builds a docker container and runs the lambda function inside it.
-The payload file should be places to _event.json_.
+The event data to run lambda on (the payload) should be placed to _./event.json_.
+Make sure you've specified a valid docker repository name in DOCKER_REPO_NAME variable of _./deploy.env_ file.
 
 ### deploy
 **Deploy your lambda function**
@@ -99,8 +100,10 @@ The payload file should be places to _event.json_.
 iron-lambda deploy
 ```
 Builds a docker container, deploys it to docker hub and registers in IronWorker cloud.
-Make sure you've logged to docker (see _docker login_ command) and has your Iron.IO project credentials in _./iron.json_.
-_iron.json_ file you can obtain on Getting Started page inside your IronWorker project (https://hud.iron.io/dashboard).
+Make sure :
+* you have logged to docker (see _docker login_ command) and has your Iron.IO project credentials in _./iron.json_.
+This file you can obtain on Getting Started page inside your IronWorker project (https://hud.iron.io/dashboard).
+* you have specified a valid docker repository name in DOCKER_REPO_NAME variable of _./deploy.env_ file.
 
 ## Notes
 ### Windows Users

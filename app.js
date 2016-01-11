@@ -38,7 +38,6 @@ IronLambda.prototype.exec = function(){
     'node_modules/.bin/node-lambda',
     'node_modules/node-lambda/bin/node-lambda',
   ];
-  var command = undefined;
 
   for (var i = 0; i < commands.length; i++) {
     var cmd = commands[i];
