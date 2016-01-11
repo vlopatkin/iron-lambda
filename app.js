@@ -32,7 +32,20 @@ IronLambda.prototype.setup = function(){
 
 IronLambda.prototype.exec = function(){
   this._preparePayload();
-  this._runChild('node', ['node_modules/iron-lambda/node_modules/.bin/node-lambda', 'run']);
+  var commands = [
+    'node_modules/iron-lambda/node_modules/.bin/node-lambda',
+    'node_modules/iron-lambda/node_modules/node-lambda/bin/node-lambda',
+    'node_modules/.bin/node-lambda',
+    'node_modules/node-lambda/bin/node-lambda',
+  ];
+  var command = undefined;
+
+  for (var i = 0; i < commands.length; i++) {
+    var cmd = commands[i];
+    if (this._isFileExists(cmd)){
+      this._runChild('node', [cmd, 'run']);
+    }
+  }
 }
 
 IronLambda.prototype.run = function(){
