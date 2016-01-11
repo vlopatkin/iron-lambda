@@ -46,6 +46,8 @@ IronLambda.prototype.exec = function(){
       return;
     }
   }
+
+  throw new Error('node-lambda binary not found');
 }
 
 IronLambda.prototype.run = function(){
