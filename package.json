@@ -18,6 +18,7 @@
     "url" : "https://github.com/vlopatkin/iron-lambda"
   },
   "files": [
+    "examples",
     "templates",
     "app.js",
     "package.json",

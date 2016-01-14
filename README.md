@@ -105,6 +105,10 @@ Make sure :
 This file you can obtain on Getting Started page inside your IronWorker project (https://hud.iron.io/dashboard).
 * you have specified a valid docker repository name in DOCKER_REPO_NAME variable of _./deploy.env_ file.
 
+## Examples
+
+* [Amazon Simple Notification Service](./examples/sns/README.md)
+
 ## Notes
 ### Windows Users
 
