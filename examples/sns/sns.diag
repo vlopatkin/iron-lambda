@@ -1,0 +1,20 @@
+title WebHook registration
+
+participant Docker
+participant SNS
+participant iron-lambda
+participant iron.worker
+participant iron.cache
+
+
+iron-lambda->Docker: Deploy image with lambda
+iron-lambda->iron.worker: Register worker with image
+iron-lambda->SNS: Register webhook endpoint
+iron-lambda->SNS: Request confirmation
+SNS->+iron.worker: Web hook call
+iron.worker->-iron.cache: Add confirmation url
+loop
+  iron-lambda->+iron.cache: Pooling for confirmation url
+  iron.cache-->-iron-lambda: Confirmation url
+end
+iron-lambda->SNS: Touching the confirmation url

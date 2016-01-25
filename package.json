@@ -9,13 +9,14 @@
   "author": "Vitaly Lopatkin <vitaly.lopatkin@gmail.com>",
   "license": "BSD-2-Clause",
   "dependencies": {
+    "aws-sdk": "^2.2.31",
     "commander": "2.9.0",
     "dotenv": "0.4.0",
     "node-lambda": "0.7.1"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/vlopatkin/iron-lambda"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vlopatkin/iron-lambda"
   },
   "files": [
     "examples",
